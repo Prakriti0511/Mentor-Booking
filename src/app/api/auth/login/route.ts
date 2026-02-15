@@ -46,19 +46,11 @@ export async function POST(request: NextRequest) {
         {expiresIn: "1d"}
     );
     return NextResponse.json(
-        {
-            success:true,
-            token,
-        },
-        {status: 200}
-    );
-    return NextResponse.json(
       {
-        success: true,
-        message: "Login successful",
-        data: {},
+        success:true,
+        token,
       },
-      { status: 200 }
+      {status: 200}
     );
   } catch {
     return NextResponse.json(
