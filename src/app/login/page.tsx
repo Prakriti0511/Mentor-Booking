@@ -8,13 +8,13 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-        router.push("/slots");
-    }
-    }, []);
+
+//   useEffect(() => {
+//     const token = localStorage.getItem("token");
+//     if (token) {
+//         router.push("/slots");
+//     }
+//     }, []);
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);

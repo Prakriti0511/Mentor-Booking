@@ -86,79 +86,76 @@ export default function SlotsPage() {
     }
   };
 
-  if (loading) return <div className="p-10">Loading slots...</div>;
+  if (loading) return <div className="p-10 text-primary">Loading slots...</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50 p-10">
-      <h1 className="text-3xl font-semibold mb-6">Available Slots</h1>
+    <div className="min-h-screen p-10 bg-[var(--background)]">
+      <h1 className="text-3xl font-semibold mb-6 text-primary">Available Slots</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {slots.map((slot) => (
           <div
             key={slot._id}
-            className="bg-white p-6 rounded-xl shadow"
+            className="bg-card p-6 rounded-xl shadow border-custom border"
           >
-            <p className="text-lg font-medium">
+            <p className="text-lg font-medium text-primary">
               {new Date(slot.date).toDateString()}
             </p>
-            <p>
+            <p className="text-foreground">
               {slot.startTime} - {slot.endTime}
             </p>
 
             <button
               onClick={() => handleBook(slot._id)}
-              className="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+              className="mt-4 btn-custom"
             >
               Book Slot
             </button>
-            
-
           </div>
-          
         ))}
-      {role === "mentor" && (
-  <div className="mb-8 bg-white p-6 rounded-xl shadow-sm border">
-    <button
-      onClick={() => setShowForm(!showForm)}
-      className="bg-black text-white px-4 py-2 rounded"
-    >
-      {showForm ? "Cancel" : "Add Slot"}
-    </button>
+        {role === "mentor" && (
+          <div className="mb-8 bg-card p-6 rounded-xl shadow-sm border-custom border">
+            <button
+              onClick={() => setShowForm(!showForm)}
+              className="btn-custom"
+            >
+              {showForm ? "Cancel" : "Add Slot"}
+            </button>
 
-    {showForm && (
-      <div className="mt-4 flex flex-wrap gap-3">
-        <input
-          type="date"
-          className="border p-2 rounded"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+            {showForm && (
+              <div className="mt-4 flex flex-wrap gap-3">
+                <input
+                  type="date"
+                  className="border-custom border p-2 rounded bg-[var(--background)] text-foreground"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
 
-        <input
-          type="time"
-          className="border p-2 rounded"
-          value={startTime}
-          onChange={(e) => setStartTime(e.target.value)}
-        />
+                <input
+                  type="time"
+                  className="border-custom border p-2 rounded bg-[var(--background)] text-foreground"
+                  value={startTime}
+                  onChange={(e) => setStartTime(e.target.value)}
+                />
 
-        <input
-          type="time"
-          className="border p-2 rounded"
-          value={endTime}
-          onChange={(e) => setEndTime(e.target.value)}
-        />
+                <input
+                  type="time"
+                  className="border-custom border p-2 rounded bg-[var(--background)] text-foreground"
+                  value={endTime}
+                  onChange={(e) => setEndTime(e.target.value)}
+                />
 
-        <button
-          onClick={handleCreateSlot}
-          className="bg-black text-white px-4 py-2 rounded"
-        >
-          Create
-        </button>
+                <button
+                  onClick={handleCreateSlot}
+                  className="btn-custom"
+                >
+                  Create
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
-    )}
-  </div>
-)}
-</div>
     </div>
   );
 }
