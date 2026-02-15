@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     await connectDB();
-    // TODO: validate body, authenticate user, return token/session
+    
     const parsed = loginSchema.safeParse(body);
 
     if(!parsed.success) {

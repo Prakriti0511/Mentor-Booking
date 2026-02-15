@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--background)]">
-      {/* Header */}
+      {/* Header*/}
       <header className="flex justify-between items-center px-10 py-6 bg-accent shadow-sm">
         <h1 className="text-3xl font-bold" style={{ color: '#D8CFBC' }}>MentorBooking</h1>
         <div className="space-x-4">
@@ -24,7 +24,6 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
       <main className="flex flex-1 items-center justify-center">
         <div className="text-center max-w-2xl">
           <h2 className="text-4xl font-bold mb-6 text-primary">
