@@ -41,7 +41,7 @@ export default function RegisterPage() {
         onSubmit={handleRegister}
         className="bg-white p-8 rounded-2xl shadow-md w-96"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center">
+        <h2 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#565449' }}>
           Create Account
         </h2>
 
@@ -49,6 +49,7 @@ export default function RegisterPage() {
           type="text"
           placeholder="Full Name"
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -57,6 +58,7 @@ export default function RegisterPage() {
           type="email"
           placeholder="Email"
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -65,12 +67,14 @@ export default function RegisterPage() {
           type="password"
           placeholder="Password"
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <select
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={role}
           onChange={(e) => setRole(e.target.value)}
         >
@@ -86,9 +90,9 @@ export default function RegisterPage() {
           {loading ? "Creating..." : "Register"}
         </button>
 
-        <p className="text-sm text-center mt-4 text-gray-600">
+        <p className="text-sm text-center mt-4" style={{ color: '#565449' }}>
           Already have an account?{" "}
-          <Link href="/login" className="text-black underline">
+          <Link href="/login" className="underline" style={{ color: '#565449' }}>
             Login
           </Link>
         </p>

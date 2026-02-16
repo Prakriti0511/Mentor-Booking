@@ -44,7 +44,7 @@ export default function LoginPage() {
         onSubmit={handleLogin}
         className="bg-white p-8 rounded-xl shadow-md w-96"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center">
+        <h2 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#565449' }}>
           Login
         </h2>
 
@@ -52,6 +52,7 @@ export default function LoginPage() {
           type="email"
           placeholder="Email"
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -60,6 +61,7 @@ export default function LoginPage() {
           type="password"
           placeholder="Password"
           className="w-full mb-4 p-2 border rounded"
+          style={{ color: '#565449' }}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
